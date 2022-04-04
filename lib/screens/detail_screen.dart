@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_crypto_ui/widgets/chart_filter.dart';
-import 'package:flutter_crypto_ui/widgets/chart_widget.dart';
-import 'package:flutter_crypto_ui/widgets/description_widget.dart';
-import 'package:flutter_crypto_ui/widgets/price_widget.dart';
-import 'package:flutter_crypto_ui/widgets/stats_widget.dart';
+import 'package:flutter_crypto_ui/widgets/widgets_detail/chart_filter.dart';
+import 'package:flutter_crypto_ui/widgets/widgets_detail/chart_widget.dart';
+import 'package:flutter_crypto_ui/widgets/widgets_detail/description_widget.dart';
+import 'package:flutter_crypto_ui/widgets/widgets_detail/price_widget.dart';
+import 'package:flutter_crypto_ui/widgets/widgets_detail/stats_widget.dart';
 
-class Detail_Screen extends StatelessWidget {
+class DetailScreen extends StatelessWidget {
+  var lineColor = Colors.orange;
+  var lineBackground = Colors.orange.withOpacity(0.4);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -39,7 +42,10 @@ class Detail_Screen extends StatelessWidget {
                 SizedBox(
                   height: 20,
                 ),
-                ChartWidget(),
+                ChartWidget(
+                  lineColor: lineColor,
+                  lineBackground: lineBackground,
+                ),
                 ChartFilter(),
                 StatsWidget(),
                 DescriptionWidget(),

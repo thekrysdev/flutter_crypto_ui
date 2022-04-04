@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_crypto_ui/screens/crypto_screen.dart';
 import 'package:flutter_crypto_ui/screens/detail_screen.dart';
 
 void main() => runApp(const MyApp());
@@ -18,8 +19,8 @@ class MyHomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.transparent,
-      body: Detail_Screen(),
+      backgroundColor: Colors.black,
+      body: CryptoScreen(),
     );
   }
 }

@@ -4,6 +4,13 @@ import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 
 class ChartWidget extends StatelessWidget {
+  var lineColor;
+  var lineBackground;
+  ChartWidget({
+    required this.lineColor,
+    required this.lineBackground,
+  });
+
   @override
   Widget build(BuildContext context) {
     return Expanded(
@@ -41,13 +48,13 @@ class ChartWidget extends StatelessWidget {
 
   LineChartBarData get lineChartBarData => LineChartBarData(
         isCurved: true,
-        color: Colors.orange,
+        color: lineColor,
         barWidth: 2,
         dotData: FlDotData(show: false),
         spots: ChartWidget.generateSampleData(),
         belowBarData: BarAreaData(
           show: true,
-          color: Colors.orange.withOpacity(0.3),
+          color: lineBackground,
         ),
       );
 
