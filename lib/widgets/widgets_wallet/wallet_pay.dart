@@ -27,21 +27,45 @@ class _WalletPayState extends State<WalletPay> {
           ),
         ),
         Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            Padding(
-              padding: const EdgeInsets.only(left: 10, top: 8, bottom: 8),
-              child: MaterialButton(
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(8),
-                  side: BorderSide(
-                    color: Colors.grey,
+            SizedBox(
+              width: 180,
+              child: Padding(
+                padding: const EdgeInsets.only(left: 0, top: 8, bottom: 8),
+                child: MaterialButton(
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(8),
+                    side: BorderSide(
+                      color: Colors.grey,
+                    ),
+                  ),
+                  onPressed: () {},
+                  color: Colors.transparent,
+                  child: Text(
+                    'Deposit',
+                    style: TextStyle(color: Colors.grey),
                   ),
                 ),
-                onPressed: () {},
-                color: Colors.transparent,
-                child: Text(
-                  'Einzahlen',
-                  style: TextStyle(color: Colors.grey),
+              ),
+            ),
+            SizedBox(
+              width: 180,
+              child: Padding(
+                padding: const EdgeInsets.only(left: 0, top: 8, bottom: 8),
+                child: MaterialButton(
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(8),
+                    side: BorderSide(
+                      color: Colors.grey,
+                    ),
+                  ),
+                  onPressed: () {},
+                  color: Colors.transparent,
+                  child: Text(
+                    'Withdraw',
+                    style: TextStyle(color: Colors.grey),
+                  ),
                 ),
               ),
             ),

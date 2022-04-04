@@ -2,6 +2,19 @@ import 'package:flutter/material.dart';
 import 'package:flutter_crypto_ui/screens/detail_screen.dart';
 
 class CryptoCard extends StatelessWidget {
+  String name;
+  String bilance;
+  String current;
+  String percent;
+  String icon;
+
+  CryptoCard(
+      {required this.name,
+      required this.bilance,
+      required this.current,
+      required this.percent,
+      required this.icon});
+
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -20,70 +33,71 @@ class CryptoCard extends StatelessWidget {
             borderRadius: BorderRadius.circular(10),
           ),
           color: Colors.grey[900],
-          child: ListTile(
-            leading: Padding(
-              padding: const EdgeInsets.only(
-                bottom: 9,
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              Padding(
+                padding: const EdgeInsets.only(left: 10),
+                child: IconButton(
+                  onPressed: () {},
+                  icon: Image.asset(icon),
+                ),
               ),
-              child: IconButton(
-                onPressed: () {},
-                icon: Image.asset('images/btc.png'),
+              SizedBox(
+                width: 10,
               ),
-            ),
-            subtitle: Padding(
-              padding: const EdgeInsets.only(top: 10),
-              child: Align(
-                alignment: Alignment.centerLeft,
+              Expanded(
+                child: Padding(
+                  padding: const EdgeInsets.only(top: 14),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        name,
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 16,
+                        ),
+                      ),
+                      Text(
+                        bilance,
+                        style: TextStyle(
+                          color: Colors.grey[600],
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(top: 14),
                 child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.end,
                   children: [
                     Text(
-                      'Bitcoin',
+                      current,
                       style: TextStyle(
+                        overflow: TextOverflow.ellipsis,
                         color: Colors.white,
                         fontWeight: FontWeight.bold,
                         fontSize: 16,
                       ),
                     ),
-                    Padding(
-                      padding: const EdgeInsets.only(left: 1),
-                      child: Text(
-                        '\$208,28',
-                        style: TextStyle(
-                          color: Colors.grey[600],
-                        ),
+                    Text(
+                      percent,
+                      overflow: TextOverflow.ellipsis,
+                      style: TextStyle(
+                        color: Colors.green,
                       ),
                     ),
                   ],
                 ),
               ),
-            ),
-            trailing: Padding(
-              padding: const EdgeInsets.only(
-                top: 7,
-                right: 6,
-              ),
-              child: Column(
-                children: [
-                  Text(
-                    '\$42.021,72',
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontWeight: FontWeight.bold,
-                      fontSize: 16,
-                    ),
-                  ),
-                  Container(
-                    padding: EdgeInsets.only(left: 45),
-                    child: Text(
-                      '+1,07%',
-                      style: TextStyle(
-                        color: Colors.green,
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-            ),
+              SizedBox(
+                width: 20,
+              )
+            ],
           ),
         ),
       ),
